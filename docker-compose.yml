@@ -1,0 +1,26 @@
+version: "3"
+
+volumes:
+  back-data:
+    driver: local
+
+services:
+  back-db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=back_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - back-data:/var/lib/postgresql/data
+  back:
+    restart: on-failure
+    build:
+      context: ./back
+  nginx:
+    restart: on-failure
+    build: nginx
+    ports:
+      - "8001:80"
