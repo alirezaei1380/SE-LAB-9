@@ -104,3 +104,26 @@ So we have added a replication for BE to manage the requests in a better way:
     deploy:
       replicas: 2
 ```
+
+After running the command `docker-compose up -d` we have build our containers. Here is the result of the command `docker container ls`:
+
+<img src="files/Screenshot 1402-10-10 at 2.29.39 at night.png">
+
+and here are our images(check using the command `docker images ls`):
+
+<img src="files/Screenshot 1402-10-10 at 2.34.22 at night.png">
+
+We can see these images in the list:
+
+- se-lab-9-nginx 
+- se-lab-9-back 
+- postgres
+
+that we used in the project.
+
+And here is the result of our running containers:
+
+<img src="files/Screenshot 1402-10-10 at 2.36.43 at night.png">
+
+We can see all containers are up and as we set in out config file our nginx has mapped external requests to port 8001 and it listens of port 80 which is its default port.
+
