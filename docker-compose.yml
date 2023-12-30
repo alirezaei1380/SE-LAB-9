@@ -19,6 +19,8 @@ services:
     restart: on-failure
     build:
       context: ./back
+    deploy:
+      replicas: 2
   nginx:
     restart: on-failure
     build: nginx
