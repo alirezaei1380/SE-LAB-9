@@ -23,4 +23,4 @@ services:
     restart: on-failure
     build: nginx
     ports:
-      - "9000:80"
+      - "8000:80"

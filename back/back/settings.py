@@ -25,7 +25,7 @@ SECRET_KEY = 'hdj$rjgywzs)d-(ew0t$2)th9n%-a4#3vyd9mzi37c$acj98mx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['back',]
 
 
 # Application definition
@@ -81,7 +81,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'back-db',
-        'PORT': 8000,
+        'PORT': 5432,
     }
 }
 
