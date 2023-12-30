@@ -127,3 +127,36 @@ And here is the result of our running containers:
 
 We can see all containers are up and as we set in out config file our nginx has mapped external requests to port 8001 and it listens of port 80 which is its default port.
 
+## Test
+
+We have used Postman application to validate if our services are working as expected or not. And here are all results for all four actions(CRUD):
+
+CREATE:
+
+<img src="files/Screenshot 1402-10-10 at 2.07.01 at night.png">
+
+READ:
+
+<img src="files/Screenshot 1402-10-10 at 2.07.22 at night.png">
+
+UPDATE:
+
+<img src="files/Screenshot 1402-10-10 at 2.07.40 at night.png">
+
+DELETE:
+
+<img src="files/Screenshot 1402-10-10 at 2.08.01 at night.png">
+
+
+And we also checked if load is shared between two replicas. So we checked incoming logs for both replicas and here is the result:
+
+<img src="files/Screenshot 1402-10-10 at 2.43.53 at night.png">
+
+<img src="files/Screenshot 1402-10-10 at 2.44.01 at night.png">
+
+So as we see load is shared.
+
+
+# Questions
+
+1. In a simple client-server system (.e.g we are using REST protocol), statelessness refers to a communication method in which the server completes every client request independently of all previous requests. Clients can request resources in any order, and every request is stateless or isolated from. We have used this feature to add replications for BE service. If we had state for each request handling them with replication would be difficult. Because server had to maintains states per request. But Here all requests are independent and can be handled by all replications easily.
