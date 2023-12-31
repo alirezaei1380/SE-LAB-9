@@ -7,10 +7,8 @@ volumes:
 services:
   back-db:
     image: postgres
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=back_db
+    env_file:
+      - back/.env
     ports:
       - "5432:5432"
     volumes:
@@ -19,6 +17,8 @@ services:
     restart: on-failure
     build:
       context: ./back
+    deploy:
+      replicas: 2
   nginx:
     restart: on-failure
     build: nginx
